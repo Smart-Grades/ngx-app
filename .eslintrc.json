@@ -1,0 +1,141 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@typescript-eslint/array-type": [
+          "warn",
+          {
+            "default": "array-simple",
+            "readonly": "array-simple"
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "variableLike",
+            "format": [
+              "camelCase"
+            ]
+          },
+          {
+            "selector": "memberLike",
+            "modifiers": [
+              "private"
+            ],
+            "format": [
+              "camelCase"
+            ],
+            "leadingUnderscore": "require"
+          },
+          {
+            "selector": "variable",
+            "types": [
+              "boolean"
+            ],
+            "format": [
+              "PascalCase"
+            ],
+            "prefix": [
+              "is",
+              "should",
+              "has",
+              "can",
+              "did",
+              "will"
+            ]
+          },
+          {
+            "selector": "variable",
+            "modifiers": [
+              "const"
+            ],
+            "format": [
+              "UPPER_CASE"
+            ]
+          },
+          {
+            "selector": "variable",
+            "modifiers": [
+              "const"
+            ],
+            "types": [
+              "boolean"
+            ],
+            "format": [
+              "UPPER_CASE"
+            ],
+            "prefix": [
+              "IS_",
+              "SHOULD_",
+              "HAS_",
+              "CAN_",
+              "DID_",
+              "WILL_"
+            ]
+          },
+          {
+            "selector": "typeLike",
+            "format": [
+              "PascalCase"
+            ]
+          },
+          {
+            "selector": "interface",
+            "format": [
+              "PascalCase"
+            ]
+          },
+          {
+            "selector": "property",
+            "format": [
+              "camelCase"
+            ],
+            "leadingUnderscore": "allow"
+          }
+        ],
+        "@typescript-eslint/explicit-member-accessibility": "error",
+        "@typescript-eslint/member-ordering": [
+          "error"
+        ],
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "rules": {}
+    }
+  ]
+}
